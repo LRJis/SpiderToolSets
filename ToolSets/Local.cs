@@ -146,6 +146,21 @@ namespace ToolSets
             Console.WriteLine(msg);
             Console.ForegroundColor = color1;
         }
-        
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="file"></param>
+        /// <returns></returns>
+        public static string FormatFileName(string file)
+        {
+            string result=file;
+            foreach (char c in Path.GetInvalidPathChars())
+            {
+                result = file.Replace(c, Char.Parse(""));
+            }
+
+            return result;
+        }
     }
 }

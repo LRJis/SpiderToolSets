@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolSets", "ToolSets\ToolSe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTools", "TestTools\TestTools.csproj", "{B91840FC-E17F-4D91-B900-D54087D2543A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spider", "Spider\Spider.csproj", "{D8603CBD-D9B7-4A89-AFAE-D7280497580B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseTools", "UseTools\UseTools.csproj", "{F8365073-03C4-4BF9-B49A-E350157AC664}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{B91840FC-E17F-4D91-B900-D54087D2543A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B91840FC-E17F-4D91-B900-D54087D2543A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B91840FC-E17F-4D91-B900-D54087D2543A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8603CBD-D9B7-4A89-AFAE-D7280497580B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8603CBD-D9B7-4A89-AFAE-D7280497580B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8603CBD-D9B7-4A89-AFAE-D7280497580B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8603CBD-D9B7-4A89-AFAE-D7280497580B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8365073-03C4-4BF9-B49A-E350157AC664}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8365073-03C4-4BF9-B49A-E350157AC664}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8365073-03C4-4BF9-B49A-E350157AC664}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8365073-03C4-4BF9-B49A-E350157AC664}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
