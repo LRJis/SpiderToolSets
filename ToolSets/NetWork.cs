@@ -13,8 +13,11 @@ namespace ToolSets
         /// <returns></returns>
         public static string GetHtml(string url)
         {
+            int i = 0;
+            begin:
             try
             {
+                
                 WebRequest webRequest = WebRequest.Create(url);
                 WebResponse webResponse = webRequest.GetResponse();
                 Stream stream = webResponse.GetResponseStream();
@@ -27,11 +30,20 @@ namespace ToolSets
 
                 return null;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                if (e is TimeoutException)
+                {
+                    if (i>=3){goto end;}
+                    i++;
+                    LocalFile.ShowVitalMessage("Try Again!", ConsoleColor.Yellow);
+                    goto begin;
+                    
+                }
                 LocalFile.ShowVitalMessage("some error occured.");
             }
 
+            end:
             return null;
         }
     }

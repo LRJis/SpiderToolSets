@@ -51,6 +51,7 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="DownloaderSpider.cs" />
         <Compile Include="DriverSpider.cs" />
         <Compile Include="Plain.cs" />
         <Compile Include="Spider.cs" />

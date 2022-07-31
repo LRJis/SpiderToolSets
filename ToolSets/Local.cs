@@ -148,10 +148,10 @@ namespace ToolSets
         }
 
         /// <summary>
-        /// 
+        /// format the file name(replace the invalid char with empty string.)
         /// </summary>
-        /// <param name="file"></param>
-        /// <returns></returns>
+        /// <param name="file">the file name you want to format.</param>
+        /// <returns>the format result.</returns>
         public static string FormatFileName(string file)
         {
             string result=file;
@@ -159,7 +159,6 @@ namespace ToolSets
             {
                 result = file.Replace(c, Char.Parse(""));
             }
-
             return result;
         }
     }

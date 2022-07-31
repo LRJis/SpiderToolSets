@@ -7,6 +7,9 @@ using ToolSets;
 
 namespace Spider
 {
+    /// <summary>
+    ///  The spider can only make some simple task.If you want to run js, use DriverSpider.
+    /// </summary>
     public abstract class PlainSpider:ISpider
     {
         public string Content { get; set; }

@@ -18,6 +18,9 @@ namespace UseTools
         }
     }
 
+    /// <summary>
+    /// the main spider is used to get all hrefs.
+    /// </summary>
     public class MainSpider : PlainSpider
     {
         public string Home = "https://www.runoob.com/";
