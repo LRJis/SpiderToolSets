@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace ToolSets
@@ -15,13 +17,28 @@ namespace ToolSets
         /// <returns>文件内容 (content)</returns>
         public static string LoadFile(string path)
         {
-            using (Stream stream = File.Open(path, FileMode.Open))
+            try
             {
-                using (StreamReader streamReader = new StreamReader(stream, Encoding.UTF8))
+                using (Stream stream = File.Open(path, FileMode.Open))
                 {
-                    return streamReader.ReadToEnd();
+                    using (StreamReader streamReader = new StreamReader(stream, Encoding.UTF8))
+                    {
+                        return streamReader.ReadToEnd();
+                    }
                 }
             }
+            catch (DirectoryNotFoundException)
+            {
+                ConsoleColor color = Console.ForegroundColor;
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Not found the file!");
+                Console.ForegroundColor = color;
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("An error unknown occured!");
+            }
+            return null;
         }
 
         /// <summary>
@@ -41,6 +58,25 @@ namespace ToolSets
         }
 
         /// <summary>
+        ///  add some content in a file.
+        /// </summary>
+        /// <param name="path">the path of the file.</param>
+        /// <param name="content">the content you want to add in.</param>
+        public static void AddInFile(string path, string content)
+        {
+            try
+            {
+                Stream stream = File.Open(path, FileMode.Append);
+                StreamWriter streamWriter = new StreamWriter(stream);
+                streamWriter.Write(content);
+            }
+            catch (Exception e)
+            {
+                ShowVitalMessage(e is FileNotFoundException ? "File doesn't exist!" : "Some error unknown occured.");
+            }
+        }
+        
+        /// <summary>
         /// 流写入 Write in file using stream.
         /// </summary>
         /// <param name="path"> 路径 the path of the file.</param>
@@ -52,5 +88,64 @@ namespace ToolSets
                 writeStream.CopyTo(stream);
             }
         }
+
+        /// <summary>
+        ///  get the file's name through URL.
+        /// </summary>
+        /// <param name="url">URL</param>
+        /// <returns>the file name</returns>
+        public static string GetNameByUrl(string url)
+        {
+            char[] sep = "/".ToCharArray();
+            return url.Split(sep).Last();
+        }
+
+        /// <summary>
+        ///  create a new directory.
+        /// </summary>
+        /// <param name="name">the directory name.</param>
+        public static void CreateDir(string name)
+        {
+            if (!Directory.Exists(name))
+            {
+                Directory.CreateDirectory(name);
+            }
+        }
+
+        /// <summary>
+        ///  NOTE! this function can only be used when the dll file is in the bin\[Debug|Release]\
+        /// </summary>
+        /// <returns>the solution dir.</returns>
+        public static string GetSolutionDir()
+        {
+            DirectoryInfo directoryInfo = Directory.GetParent(Environment.CurrentDirectory);
+            string root = directoryInfo.Parent.Parent.FullName;
+            return root;
+        }
+
+        /// <summary>
+        /// Get the project path
+        /// </summary>
+        /// <returns>the path of the project.</returns>
+        public static string GetProjectDir()
+        {
+            DirectoryInfo directoryInfo = Directory.GetParent(Environment.CurrentDirectory);
+            string root = directoryInfo.Parent.FullName;
+            return root;
+        }
+
+        /// <summary>
+        ///  Print a vital message use special color.
+        /// </summary>
+        /// <param name="msg">the vital message you want to print.</param>
+        /// <param name="color">the font color you want to use.</param>
+        public static void ShowVitalMessage(string msg, ConsoleColor color = ConsoleColor.Red)
+        {
+            ConsoleColor color1 = Console.ForegroundColor;
+            Console.ForegroundColor = color;
+            Console.WriteLine(msg);
+            Console.ForegroundColor = color1;
+        }
+        
     }
 }
