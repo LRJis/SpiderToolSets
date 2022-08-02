@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Local", "Local\Local.csproj", "{03515D6B-F7D7-4B0D-90CB-253B328C60AC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spider", "Spider\Spider.csproj", "{A1C06EB0-1220-4030-B619-67B88D917D80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSpider", "TestSpider\TestSpider.csproj", "{8205FE1C-946A-4B53-A835-2AF147C74BA7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{03515D6B-F7D7-4B0D-90CB-253B328C60AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03515D6B-F7D7-4B0D-90CB-253B328C60AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03515D6B-F7D7-4B0D-90CB-253B328C60AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1C06EB0-1220-4030-B619-67B88D917D80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1C06EB0-1220-4030-B619-67B88D917D80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1C06EB0-1220-4030-B619-67B88D917D80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1C06EB0-1220-4030-B619-67B88D917D80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8205FE1C-946A-4B53-A835-2AF147C74BA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8205FE1C-946A-4B53-A835-2AF147C74BA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8205FE1C-946A-4B53-A835-2AF147C74BA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8205FE1C-946A-4B53-A835-2AF147C74BA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
