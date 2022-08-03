@@ -60,10 +60,13 @@ namespace TestSpider
         {
             ILogger logger = new ConsoleLogger();
             DriverSpider1 spider1 = new DriverSpider1() { Logger = logger };
-            spider1.Init("https://www.baidu.com", "--headless", "--nogpu");
-            spider1.GoToWithoutClose("file:///E:/projects/Spider4/TestSpider/bin/Release/html/index.html");
+            spider1.Init("https://www.baidu.com", "--nogpu");
+            spider1.GoToWithoutClose("https://python.org");
+            spider1.GoAndClose("https://www.baidu.com");
+            Thread.Sleep(1000);
             Console.WriteLine(spider1.Driver.WindowHandles.Count);
-            Console.WriteLine(spider1.GetHtml());
+            // Console.WriteLine(spider1.GetHtml());
+            
         }
     }
 

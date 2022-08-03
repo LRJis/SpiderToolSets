@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
@@ -53,16 +54,17 @@ namespace Spider.Spider
             Url = url;
             if (!HrefsDictionary.ContainsKey(url))
             {
+                HrefsDictionary.Remove(Driver.Url);
                 Driver.ExecuteScript($"window.location.href = '{url}'");
                 HrefsDictionary.Add(url, Driver.CurrentWindowHandle);
             }
             else
             {
-                Driver.ExecuteScript("window.close()");
-                
+                HrefsDictionary.Remove(Driver.Url);
+                Driver.ExecuteScript("window.open(\"about:blank\",\"_self\");window.close();");
                 Driver.SwitchTo().Window(HrefsDictionary[url]);
             }
-
+            
             Driver.Url = url;
             Thread.Sleep(sleep);
         }
@@ -73,11 +75,12 @@ namespace Spider.Spider
             if (HrefsDictionary.ContainsKey(url))
             {
                 Driver.SwitchTo().Window(HrefsDictionary[url]);
+                Console.WriteLine("...");
+                return;
             }
-            Driver.ExecuteScript($"window.open('{url}','_blank')");
+            Driver.ExecuteScript($"window.open('{url}')");
             Driver.SwitchTo().Window(Driver.WindowHandles.Last());
             HrefsDictionary.Add(url, Driver.CurrentWindowHandle);
-            Driver.Url = url;
             Thread.Sleep(sleep);
         }
 

@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spider", "Spider\Spider.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSpider", "TestSpider\TestSpider.csproj", "{8205FE1C-946A-4B53-A835-2AF147C74BA7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DownloadDocs", "DownloadDocs\DownloadDocs.csproj", "{6E775406-0140-47C7-94BD-6090934DE5A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{8205FE1C-946A-4B53-A835-2AF147C74BA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8205FE1C-946A-4B53-A835-2AF147C74BA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8205FE1C-946A-4B53-A835-2AF147C74BA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E775406-0140-47C7-94BD-6090934DE5A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E775406-0140-47C7-94BD-6090934DE5A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E775406-0140-47C7-94BD-6090934DE5A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E775406-0140-47C7-94BD-6090934DE5A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
